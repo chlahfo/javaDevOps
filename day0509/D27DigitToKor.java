@@ -1,0 +1,130 @@
+/*
+	사용자한테 0~99 사이의 수를 입력받아 한글표기식 출력하는 프로그램을 if 문을 이용하여 작성해봅니다.
+	사용 예
+	0~99사이의 수를 입력 ==> 15
+	십오
+*/
+import java.util.Scanner;
+class D27DigitToKor 
+{
+	public static void main(String[] args) 
+	{
+		int n;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("0~99 사이의 수를 입력 ==> ");
+		n = sc.nextInt();
+		String str10, str1;
+
+		int n10, n1;
+		n10 = n /10;
+		n1 = n % 10;
+
+		str10 = ""; 
+		str1 = "";
+		if(n < 0 || n > 99){
+			System.out.println("입력오류");
+			return;
+		}
+		if(n == 0){
+			System.out.println("영");
+			return;
+		}
+		//십의 자리 처리
+		if(n10 == 1){
+			str10 = "십";
+		}else if(n10 == 2){
+			str10 = "이십";
+		}else if(n10 == 3){
+			str10 = "삼십";
+		}else if(n10 == 4){
+			str10 = "사십";
+		}else if(n10 == 5){
+			str10 = "오십";
+		}else if(n10 == 6){
+			str10 = "육십";
+		}else if(n10 == 7){
+			str10 = "칠십";
+		}else if(n10 == 8){
+			str10 = "팔십";
+		}else if(n10 == 9){
+			str10 = "구십";
+		}
+		//일의 자리 처리
+		if(n1 == 0){
+			str1 ="";
+		}else if(n1 == 1){
+			str1 = "일";
+		}else if(n1 == 2){
+			str1 = "이";
+		}else if(n1 == 3){
+			str1 = "삼";
+		}else if(n1 == 4){
+			str1 = "사";
+		}else if(n1 == 5){
+			str1 = "오";
+		}else if(n1 == 6){
+			str1 = "육";
+		}else if(n1 == 7){
+			str1 = "칠";
+		}else if(n1 == 8){
+			str1 = "팔";
+		}else if(n1 == 9){
+			str1 = "구";
+		}
+		String kor = str10 + str1;
+		System.out.println(kor);
+	}
+}
+/*
+	int n;
+		String txt ="";
+		System.out.print("0~99사이의 수를 입력==> ");
+		Scanner sc = new Scanner(System.in);
+		n = sc.nextInt();
+		if(n >= 10){
+			if(n / 10 == 9){
+				System.out.print("구");	
+			}else if(n / 10 == 8){
+				System.out.print("팔");	
+			}else if(n / 10 == 7){
+				System.out.print("칠");	
+			}else if(n / 10 == 6){
+				System.out.print("육");	
+			}else if(n / 10 == 5){
+				System.out.print("오");	
+			}else if(n / 10 == 4){
+				System.out.print("사");	
+			}else if(n / 10 == 3){
+				System.out.print("삼");	
+			}else if(n / 10 == 2){
+				System.out.print("이");	
+			}
+			System.out.print("십");
+			if(n % 10 == 0){
+				return;
+			}
+		}
+		if(n % 10 == 9){
+			System.out.print("구");	
+		}else if(n % 10 == 8){
+			System.out.print("팔");	
+		}else if(n % 10 == 7){
+			System.out.print("칠");	
+		}else if(n % 10 == 6){
+			System.out.print("육");	
+		}else if(n % 10 == 5){
+			System.out.print("오");	
+		}else if(n % 10 == 4){
+			System.out.print("사");	
+		}else if(n % 10 == 3){
+			System.out.print("삼");	
+		}else if(n % 10 == 2){
+			System.out.print("이");	
+		}else if(n % 10 == 1){
+			System.out.print("일");	
+		}else{
+			System.out.print("영");
+		}
+
+		//System.out.println("Hello World!");
+*/

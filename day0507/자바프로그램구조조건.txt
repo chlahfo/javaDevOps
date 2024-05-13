@@ -1,0 +1,78 @@
+자바 어플리케이션에 기본 구조에 대하여 설명하시오.
+* java 파일명과 동일한 이름을 가진 클래스가 있어야한다.(보통 대문자 이외 첫 글자는 영문이며 중간에 _ 사용가능)
+* 그 클래스 안에 프로그램 시작점인 main 메소드가 한 가지 있어야한다. 
+
+1) 반드시 하나 이상의 클래스로 구성된다.
+2) 반드시 하나의 main 메소드를 가져야한다. 
+
+public class 클래스이름{
+	public static void main(String []args){
+		
+	}
+}
+
+
+--> 대괄호 뒤 args는 쓸 수 있음
+--> 명령어 뒤에 세미콜론
+
+저장하기 : 클래스 이름 .java
+컴파일 하기 : javac 파일명
+실행하기 : java 클래스이름
+
+
+-------------------------
+
+컴퓨터와 사용자가 대화하는 형태의 프로그램
+컴퓨터가 묻고 거기에 사용자가 대답하고.
+==> 변수를 사용
+
+String name;
+int age;
+
+name = "홍길동" <----O
+"홍길동" = name <----X
+
+----------------------------------------
+
+import java.util.Scanner;
+Scanner sc = new Scanner(System.in);
+system.out.print("이름을 입력하세요==>");
+name = sc.next();
+System.out.print("나이를 입력하세요==>");
+
+--------------------------
+
+연산자 사용하기
++
+-
+*
+/
+
+int a;
+a = 3+4;
+
+age.sc.nextInt();
+
+
+------------------------------------
+
+main 메소드의 명령들을 순차적으로 동작합니다.
+일의 순서에 맞게 명령을 내려야 합니다.
+
+만약 다음과 같이 변수를 선언하기도 전에 사용하는 명령이 오면 오류가 발생합니다.
+System.out.print("첫 번째 수를 입력하세요==>");
+a = sc.nextInt();
+Scanner sc = new Scanner(System.in);
+int a, b, add, sub, multi, div;
+
+
+C:\javaTest\day0507>javac Calc.java
+Calc.java:6: error: cannot find symbol
+                a = sc.nextInt();
+                ^
+  symbol:   variable a
+  location: class Calc
+1 error
+
+
+

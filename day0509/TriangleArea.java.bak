@@ -1,0 +1,21 @@
+/*
+	사용자한테 정수 가로길이, 세로길이를 입력받아 삼각형의 면적을 계산하여 출력하는 프로그램
+	(면적은 소수점이하 2째자리까지 입력)
+*/
+
+import java.util.Scanner;
+
+class TriangleArea{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		int w, h;
+		double s;
+		System.out.print("삼각형 길이 : ");
+		w = sc.nextInt();
+		System.out.print("삼각형 높이 : ");
+		h = sc.nextInt();
+		s = w * h / 2.0;
+		System.out.printf("삼각형의 넓이는 %.2f 이다.",s);
+	}
+}

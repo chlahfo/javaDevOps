@@ -1,0 +1,27 @@
+/*
+	비트차 연산자를 사용하면 임시변수없이 두 변수 값을 서로 맞바꿀 수 있어요
+	1) a 와 b를 비트차 연산하여 a에 저장
+	2) a 와 b를 비트차 연산하여 b에 저장
+	3) a 와 b를 비트차 연산하여 a에 저장
+*/
+class D10Bit {
+	public static void main(String[] args) {
+		int a = 25;// 0011001
+		int b = 100;//1100100
+		//1111101 --> 
+
+		System.out.println("두 변수의 초기값: ");
+		System.out.println("a: "+ a);
+		System.out.println("b: "+ b);
+
+		a = a ^ b;
+		System.out.println(a^b);
+		b = a ^ b; 
+		a = a ^ b;
+
+		System.out.println("두 변수의 값을 서로 변경한 후: ");
+		System.out.println("a: "+ a);
+		System.out.println("b: "+ b);
+
+	}
+}

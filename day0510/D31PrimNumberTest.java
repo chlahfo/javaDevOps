@@ -1,0 +1,28 @@
+//소수 판별
+/*
+	사용자한테 N을 입력받아서 소수인지 판별하는 프로그램
+*/
+
+import java.util.Scanner;
+class D31PrimNumberTest
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		int i, n;
+		System.out.print("N을 입력하세요.");
+		n = sc.nextInt();
+
+		for(i = 2; i<n;i++){
+			if(n % i == 0){
+				break;
+			}
+		}
+		if(i == n){
+			System.out.printf("%d는 소수입니다.", i);
+		}else{
+			System.out.printf("%d는 %d에 의하여 소수가 아닙니다.", n, i);
+		}
+	}
+	
+}

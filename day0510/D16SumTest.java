@@ -1,0 +1,42 @@
+//사용자한테 n을 입력받아서 1~n까지의 짝수의합, 홀수의 합을 각각 구하여 출력하는 프로그램을 작성해봅니다.
+import java.util.Scanner;
+class D16SumTest 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		int evenSum, oddSum, n = sc.nextInt();
+		evenSum = 0;
+		oddSum = 0;
+		for(int i = 1; i <=n; i++){
+			if(i % 2 == 0){
+				evenSum += i;
+			}else{
+				oddSum += i;
+			}
+		}
+		System.out.printf("1부터 %d까지의 짝수의 합은 %d입니다.\n", n, evenSum);
+		System.out.printf("1부터 %d까지의 홀수의 합은 %d입니다.\n", n, oddSum);
+	}
+}
+
+/*
+		int n, sumOdd, sumEven;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("임의의 수 n을 입력하세요 ==> ");
+		n = sc.nextInt();
+		sumOdd = 0;
+		sumEven = 0;
+		for (int i = 0;i <= n ; i += 2)
+		{
+			sumEven += i;
+
+		}
+		for (int i = 1;i <= n ; i += 2)
+		{
+			sumOdd += i;
+		}
+		System.out.println(sumEven + "\t" + sumOdd);
+		//2 4 6 8 10 --> 
+		//1 3 5 7 9
+		*/

@@ -1,0 +1,34 @@
+/*
+	사용자한테 월을 입력받아서 그 월이 몇일까지 있는지 출력하는 프로그램 작성
+	단, 2월달에 대하여 윤년처리는 하지 않고 28일까지로 처리합니다.
+*/
+import java.util.Scanner;
+class D26SeasonTest 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.print("월을 입력하세요 ==> ");
+		int lastDate, month = sc.nextInt();
+		lastDate = 31;
+		if(month < 1 || month > 12){
+			System.out.println("입력오류");
+			return;
+		}
+		if(month == 4 || month == 6 || month == 9 || month == 11){
+			lastDate = 30;
+		}else if(month == 2){
+			lastDate = 28;
+		}
+		System.out.printf("%d월은 %d일까지 있어요", month, lastDate);
+		/*
+		if(month == 2){
+			lastDate = 28;
+		}else if((month <=7 && month % 2 == 1) || (month >= 8 && month % 2 == 0)){
+			lastDate = 31;
+		}else{
+			lastDate = 30;
+		}*/
+		//System.out.printf("해당 월은 %d일까지 있습니다.", lastDate);
+	}
+}

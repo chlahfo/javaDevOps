@@ -1,0 +1,39 @@
+//1~100 모든 수 출력하기
+import java.util.Scanner;
+class D25Print1To100
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		boolean flag = true;
+		int to;
+		int n = 1;
+		System.out.print("1부터 어디까지 출력해줄까?");
+		to = sc.nextInt();
+		while(flag){
+			if(){
+				System.out.printf("%5d", n);
+			}
+			if(n == to){
+				flag = false;
+			}
+			n = n + 1;
+		}
+	}
+}
+/*
+	Scanner sc = new Scanner(System.in);
+		boolean flag = true;
+		int n, i;
+		
+		System.out.print("출력할 숫자를 입력하세요 => ");
+		n = sc.nextInt();
+		i = 1;
+		while(flag){
+			System.out.printf("%5d",i);
+			if(i == n){
+				flag = false;
+			}
+			i = i + 1;
+		}
+*/

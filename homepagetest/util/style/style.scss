@@ -1,0 +1,30 @@
+//S: variation
+$grey:#333;
+//E: variation
+//toggle
+.toggle{
+    .title-wrap{
+        display:flex;
+        align-items: center;
+
+        .ico-allow{
+            width: 0; 
+            height: 0; 
+            border-left: 0.25em solid transparent;
+            border-right: 0.25em solid transparent;
+            border-top: 0.25em solid $grey;
+        }
+    }
+
+    
+    .cnt-wrap{
+        height:0;
+        overflow: hidden;
+    }
+
+    &.on .cnt-wrap{
+        height:200px;
+    }
+
+}
+

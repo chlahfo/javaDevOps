@@ -1,0 +1,18 @@
+.toggle .title-wrap {
+  display: flex;
+  align-items: center;
+}
+.toggle .title-wrap .ico-allow {
+  width: 0;
+  height: 0;
+  border-left: 0.25em solid transparent;
+  border-right: 0.25em solid transparent;
+  border-top: 0.25em solid #333;
+}
+.toggle .cnt-wrap {
+  height: 0;
+  overflow: hidden;
+}
+.toggle.on .cnt-wrap {
+  height: 200px;
+}/*# sourceMappingURL=style.css.map */

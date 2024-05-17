@@ -1,6 +1,6 @@
 import java.util.Date;
 import java.util.Scanner;
-public class javaTest2 {
+public class javaTest3 {
     //질문과 함께 String 반환
     public static String getAnswerString(String s){
         String answer;
@@ -41,15 +41,15 @@ public class javaTest2 {
         
         return animalNum;
     }
-    //그 사람의 정보들을 질문. 생년월일과 운명 번호 리스트들의 내용을 바꿈
+    
+    //그 사람의 정보들을 질문하고 생년월일과 운명 번호 리스트들의 내용을 바꿈
     public static void fateAndInfoSetting(int []birth, int []fateNums){
         int moveNum, posNum;
-        char answer = 'n';
+        
         String Time = "월일시";
         String name = "";
 
-        while(answer == 'n'){       
-            posNum = 1;         
+        posNum = 1;         
             name = getAnswerString("당신의 이름은 무엇인가요?");
             birth[0] = getBirthYear();
 
@@ -60,18 +60,25 @@ public class javaTest2 {
                     moveNum += (moveNum % 2);
                     moveNum = (moveNum == 24)? (moveNum / 2) - 12 + 1: moveNum / 2 + 1;
                 }
-                posNum += --moveNum;
-                posNum %= 12;
-                fateNums[i] = posNum;
-            }
+            posNum += --moveNum;
+            posNum %= 12;
+            fateNums[i] = posNum;
+        }
 
-            System.out.printf("[%s님의 출생 연월일시]\n%d년 %d월 %d일 %d시\n", name, birth[0], birth[1], birth[2], birth[3]);
-            answer = getAnswerString("내용이 맞다면 y 틀리다면 n을 입력해주세요").charAt(0);
-            while(!(answer == 'y'|| answer == 'n'))
-                answer = getAnswerString("y 또는 n만 입력해주세요").charAt(0);
+        System.out.printf("[%s님의 출생 연월일시]\n%d년 %d월 %d일 %d시\n", name, birth[0], birth[1], birth[2], birth[3]);
+    }
+    //계속 할건지 다시 할건지 묻기 //will fix
+    public static void askContinue(char loopAnswer, char continueAnswer, int []birth, int []fateNums){
+        char answer = loopAnswer;
+        while(answer == loopAnswer){
+            
+            fateAndInfoSetting(birth, fateNums);//will fix
+
+            answer = getAnswerString("계속 진행하시려면 "+continueAnswer+", 다시 입력하시려면 "+loopAnswer+"입력해주세요.").charAt(0);
+            while(!(answer == continueAnswer|| answer == loopAnswer))
+                answer = getAnswerString(continueAnswer+" 또는 "+loopAnswer+"만 입력해주세요").charAt(0);
         }
     }
-
     //그 사람의 사주팔자를 알려줌.
     public static void startHoroscopeGame(){
         int []birth = new int[4];
@@ -90,7 +97,8 @@ public class javaTest2 {
             "천수 : 손재주가 있어요.", 
             "천명 : 명이 길어요"
         };
-        fateAndInfoSetting(birth, fateNums);
+        //will fix
+        askContinue('n', 'y', birth, fateNums);
         System.out.printf("**** 사주팔자결과 *****\n%s\n%s\n%s\n%s\n", fate12[fateNums[0]], fate12[fateNums[1]], fate12[fateNums[2]], fate12[fateNums[3]]);
     }
 
